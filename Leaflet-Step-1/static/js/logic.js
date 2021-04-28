@@ -38,11 +38,13 @@ function createMarkers(response) {
   
     // Loop through the stations array
     for (var index = 0; index < earthquakes.length; index++) {
-      var magnitude = earthquakes[index];
       var location = earthquakes[index].geometry.coordinates
       // For each station, create a marker and bind a popup with the station's name
       var earthquakeMarker = L.marker([location[0], location[1]])
-        .bindPopup("<h3>" + 'title' + "<h3><h3>Capacity: " + 'someth' + "</h3>");
+        .bindPopup("<h3>Latitude: "+ location[0] + "</h3>"+
+                    "<h3>Longitude: "+ location[1] + "</h3>"+
+                    "<h3>Depth: "+ location[2] + "</h3>"+
+                    "<h3>Magnitude: " + earthquakes[index].properties.mag + "</h3>");
       // Add the marker to the bikeMarkers array
       earthquakeMarkers.push(earthquakeMarker);
     }
