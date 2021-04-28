@@ -29,8 +29,6 @@ function createMap(earthquakeMarkers) {
     
 }
 
-
-
 function createMarkers(response) {
     var earthquakes = response.features
     var earthquakeMarkers = [];
